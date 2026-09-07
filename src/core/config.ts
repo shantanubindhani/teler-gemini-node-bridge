@@ -9,10 +9,10 @@ export const config = {
     serverDomain:           process.env.SERVER_DOMAIN || '',
 
     telerKey:               process.env.TELER_API_KEY || '',
-    geminisApiKey:       process.env.GEMINIS_API_KEY || '',
-    googleApiKey:        process.env.GOOGLE_API_KEY || '',
-    geminiModel:           process.env.GEMINI_MODEL || 'gemini-2.0-flash',
-    geminiSystemMessage:      process.env.GEMINI_SYSTEM_MESSAGE || 'You are a helpful assistant that helps users to transcribe audio files into text. You will receive audio files in chunks, and you need to transcribe them into text. Please provide the transcription in a clear and concise manner.',
-    geminiAudioChunkCount: Number(process.env.GEMINI_AUDIO_CHUNK_COUNT) || 5,
+    geminisApiKey:          process.env.GEMINIS_API_KEY || '',
+    googleApiKey:           process.env.GOOGLE_API_KEY || '',
+    geminiModel:            process.env.GEMINI_MODEL || 'gemini-3.1-flash-live-preview',
+    geminiSystemMessage:    process.env.GEMINI_SYSTEM_MESSAGE || 'You are a helpful assistant that helps users to transcribe audio files into text. You will receive audio files in chunks, and you need to transcribe them into text. Please provide the transcription in a clear and concise manner.',
+    geminiAudioChunkCount:  Number(process.env.GEMINI_AUDIO_CHUNK_COUNT) || 5,
 
 } as const;

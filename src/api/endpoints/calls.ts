@@ -10,15 +10,15 @@ export const getMediaStreamURL      = () => `wss://${process.env.SERVER_DOMAIN}/
 
 callRouter.post('/initiate-call', async (req: Request, res: Response) => {
     try {
-        const { fromNumber, toNumber, record } = req.body;
+        const { from_number, to_number, record } = req.body;
 
         const client       = new Client(config.telerKey);
         const flowUrl           = getFlowUrl();
         const statusCallbackUrl = getStatusCallbackUrl();
 
         const call = await client.calls.create({
-            from_number: fromNumber,
-            to_number: toNumber,
+            from_number: from_number,
+            to_number: to_number,
             flow_url: flowUrl,
             status_callback_url: statusCallbackUrl,
             record: record ?? true
@@ -37,7 +37,7 @@ callRouter.post('/flow', (_req: Request, res: Response) => {
     res.json({
         action:      'stream',
         ws_url:      mediaStreamUrl,
-        chunk_size:  500,
+        chunk_size:  200,
         sample_rate: "16k",
         record:      false,
     });

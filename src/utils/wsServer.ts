@@ -11,7 +11,7 @@ export const wss = new WebSocketServer({ noServer: true });
 const connector = new StreamConnector(
     `wss://generativelanguage.googleapis.com/ws/google.ai.generativelanguage.v1beta.GenerativeService.BidiGenerateContent?key=${cfg.googleApiKey}`,
     StreamType.BIDIRECTIONAL,
-    callStreamHandler,
+    callStreamHandler(),
     remoteStreamHandler()
 );
 
